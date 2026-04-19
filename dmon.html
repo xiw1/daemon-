@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ديمون تارغاريان</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #0b0b0f;
+    color: white;
+}
+
+/* الهيدر */
+header {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+}
+
+header img {
+    width: 180px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 35px;
+    color: #e60023;
+}
+
+/* الأيقونات */
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background: #151515;
+}
+
+.icon-box {
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-box:hover {
+    transform: scale(1.2);
+}
+
+.icon-box i {
+    font-size: 30px;
+    color: #e60023;
+}
+
+.icon-box p {
+    margin-top: 5px;
+}
+
+/* المحتوى */
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    display: none;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    animation: fade 0.5s;
+}
+
+.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* صورة التنين */
+.dragon {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* الفوتر */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Daemon_Targaryen.jpg">
+    <h1>ديمون تارغاريان</h1>
+    <p>أحد أقوى فرسان التنانين</p>
+</header>
+
+<div class="icons">
+
+    <div class="icon-box" onclick="show('story')">
+        <i class="fas fa-book"></i>
+        <p>القصة</p>
+    </div>
+
+    <div class="icon-box" onclick="show('info')">
+        <i class="fas fa-user"></i>
+        <p>معلومات</p>
+    </div>
+
+    <div class="icon-box" onclick="show('dragon')">
+        <i class="fas fa-dragon"></i>
+        <p>التنين</p>
+    </div>
+
+</div>
+
+<div class="content">
+
+<div id="story" class="card">
+    <h2>القصة</h2>
+    <p>
+        ديمون تارغاريان هو أمير محارب، معروف بشجاعته وقسوته،
+        وكان له دور كبير في صراعات الحكم داخل العائلة.
+    </p>
+</div>
+
+<div id="info" class="card">
+    <h2>معلومات</h2>
+    <p>
+        يُعرف بمهاراته القتالية العالية وقيادته للتنانين،
+        وهو من أكثر الشخصيات تأثيرًا في الأحداث.
+    </p>
+</div>
+
+<div id="dragon" class="card">
+    <h2>تنينه</h2>
+    <p>تنينه يُدعى كاراكسيز (Caraxes) ويُعرف بالدموي.</p>
+    <img class="dragon" src="https://upload.wikimedia.org/wikipedia/en/3/3d/Caraxes.png">
+</div>
+
+</div>
+
+<footer>
+    <p>© موقع ديمون تارغاريان</p>
+</footer>
+
+<script>
+function show(section) {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(card => card.classList.remove("active"));
+
+    document.getElementById(section).classList.add("active");
+}
+</script>
+
+</body>
+</html>
